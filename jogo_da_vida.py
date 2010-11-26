@@ -1,29 +1,23 @@
 import unittest
 
-def jogoDaVida(numLinhas, numColunas, mundo):
-    
-    matriz = mundo.split()
-    
-    
-    
-    proxGeracao = '''........
-...**...
-...**...
-........'''
-    return proxGeracao
+def jogo_da_vida(num_linhas, num_colunas, mundo):
+
+    proxima_geracao = '''..
+..'''
+
+
+    return proxima_geracao
     
 
 class StubTests(unittest.TestCase):    
-    def testJDV_4_8_mundo1(self):
-        mundoGeracao1 = '''........
-....*...
-...**...
-........'''
-        mundoGeracao2 = '''........
-...**...
-...**...
-........'''        
-        self.assertEquals(mundoGeracao2, jogoDaVida(4, 8, mundoGeracao1))
+    def test_2_2_die(self):
+        geracao_1 = \
+'''*.
+   ..'''.replace(' ', '')
+        geracao_2 = \
+'''..
+   ..'''.replace(' ', '')        
+        self.assertEquals(geracao_2, jogo_da_vida(2, 2, geracao_1))
     
     
 if __name__ == '__main__':
