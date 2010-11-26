@@ -53,7 +53,7 @@ def jogo_da_vida(num_linhas, num_colunas, mundo):
                 lista = list(matriz[pos_linha])
                 lista[pos_coluna] = '.'
                 matriz[pos_linha] = reduce(lambda x,y: x + y, lista)           
-            
+                
             #ele surge 
             if celula == '.' and num_vizinhos_vivos == 3:
                 lista = list(matriz[pos_linha])
@@ -76,6 +76,18 @@ class StubTests(unittest.TestCase):
    ..'''.replace(' ', '')        
         self.assertEquals(geracao_2, jogo_da_vida(2, 2, geracao_1))
     
+    def test_4_8_live(self):
+        geracao_1 = \
+'''........
+   ....*...
+   ...**...
+   ........'''.replace(' ', '')
+        geracao_2 = \
+'''........
+   ...**...
+   ...**...
+   ........'''.replace(' ', '')        
+        self.assertEquals(geracao_2, jogo_da_vida(4, 8, geracao_1))
     
 if __name__ == '__main__':
     unittest.main()
